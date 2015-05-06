@@ -12,9 +12,8 @@
 
 @end
 
-@implementation ViewController{
-    NSArray *passenger_options;
-}
+@implementation ViewController
+NSArray *passenger_options;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,6 +39,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    UIAlertView *messageAlert = [[UIAlertView alloc]
+//                                 initWithTitle:@"Row Selected" message:[passenger_options objectAtIndex:indexPath.row] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//    [messageAlert show];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
